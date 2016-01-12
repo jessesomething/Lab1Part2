@@ -7,18 +7,23 @@ parsedSentence = ''
 wordCount = 0
 
 while wordCount < len(sentence):
-    restWords = ''
+    firstUpper = ''
+    restLetters = ''
     if wordCount == 0:
         firstWord = sentence[wordCount].lower()
         parsedSentence = firstWord
     else:
-        for word in sentence[wordCount]:
-            firstUpper = word[0].upper()
-            lastLetters = word[1:].lower()
-            restWords = restWords + firstUpper + lastLetters
+        letterCount = 0
+        while letterCount < len(sentence[wordCount]):
+        # for letter in sentence[wordCount]:
+            if letterCount == 0:
+                firstUpper = letter.upper()
+            else:
+                lastLetters = letter.lower()
+            letterCount = letterCount + 1
 
     wordCount = wordCount + 1
-    parsedSentence = parsedSentence + restWords
+    parsedSentence = parsedSentence
 
 print(parsedSentence)
 
