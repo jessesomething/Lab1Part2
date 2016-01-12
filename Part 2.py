@@ -17,9 +17,9 @@ while wordCount < len(sentence):
         while letterCount < len(sentence[wordCount]):
         # for letter in sentence[wordCount]:
             if letterCount == 0:
-                firstUpper = letter.upper()
+                sentence[wordCount[0]].upper()
             else:
-                lastLetters = letter.lower()
+                sentence[wordCount[1:]].lower()
             letterCount = letterCount + 1
 
     wordCount = wordCount + 1
