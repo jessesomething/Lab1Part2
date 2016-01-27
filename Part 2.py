@@ -1,61 +1,33 @@
-sentence = input("Enter a sentence to parse: ")
 
+# User input and splits the string into words
+sentence = input("Enter a sentence to parse: ")
 sentence = sentence.split(" ")
 
-parsedSentence = ''
-
-# Started working on the methods instead after struggling with the code below
-
-# Uppercase parser
-def parseUppers(word):
-    letterStr = word
-    letterStr = letterStr.upper()
-    return letterStr
+# Camelcase parser
+def camelCase(word):
+    # Returns the first letter in upper and the rest in lowercase
+    return word[0].upper() + word[1:].lower()
 
 # Lowercase parser
 def parseLowers(word):
-    letterStr = word
-    letterStr = letterStr.lower()
-    return letterStr
+    # Returns full word in lowercase
+    return word.lower()
 
+# Takes the first word from the phrase into a string
 firstWord = parseLowers(sentence[0])
 
-# Need to use this method with a loop instead of trying to apply to a range
-# lastWords = parseLowers(sentence[0:])
+# Takes the last words from the phrase and adds to last word list
+lastWordsList = sentence[1:]
 
-print(firstWord)
-# print(lastWords)
+# String init
+lastWords = ''
 
-# wordCount = 0
-#
-# while wordCount < len(sentence):
-#     firstUpper = ''
-#     restLetters = ''
-#     if wordCount == 0:
-#         firstWord = sentence[wordCount].lower()
-#         parsedSentence = firstWord
-#     else:
-#         letterCount = 0
-#         while letterCount < len(sentence[wordCount]):
-#         # for letter in sentence[wordCount]:
-#             if letterCount == 0:
-#                 sentence[wordCount[0]].upper()
-#             else:
-#                 sentence[wordCount[1:]].lower()
-#             letterCount = letterCount + 1
-#
-#     wordCount = wordCount + 1
-#     parsedSentence = parsedSentence
-#
-# print(parsedSentence)
+# Reads words in list to apply to camelcase method
+for word in range(len(lastWordsList)):
+    lastWordsList[word] = camelCase(lastWordsList[word])
 
-# for letter in sentence:
-#     sentence[letter] =
+# Adds up the words to the last word string
+for word in lastWordsList:
+    lastWords = lastWords + word
 
-#
-# for letter in sentence:
-#     if letter == ' ':
-#         letter.next.upper()
-
-
-# print(sentence)
+print(firstWord + lastWords)
